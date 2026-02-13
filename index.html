@@ -3,95 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Se7eN | Video Editor Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Sᴇ7ᴇN | Professional Video Editor</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: #0d0d0d;
+      background: #050505;
       color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
     }
 
+    /* VIDEO BACKGROUND */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.75);
+      z-index: -1;
+    }
+
+    /* HERO */
     header {
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      background: linear-gradient(135deg, #000000, #1a1a1a);
       text-align: center;
     }
 
     header h1 {
-      font-size: 4rem;
-      letter-spacing: 3px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4.5rem;
+      letter-spacing: 6px;
+      background: linear-gradient(90deg, #ffffff, #888888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     header p {
-      margin-top: 10px;
+      margin-top: 15px;
+      color: #bbbbbb;
       font-size: 1.2rem;
-      color: #aaaaaa;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .btn {
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #ffffff;
-      color: #000000;
-      text-decoration: none;
+      padding: 12px 28px;
       border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      border: 1px solid #444;
       transition: 0.3s;
     }
 
     .btn:hover {
-      background: #cccccc;
+      background: white;
+      color: black;
+      transform: scale(1.05);
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1000px;
+      padding: 80px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
     h2 {
-      margin-bottom: 20px;
+      font-family: 'Orbitron', sans-serif;
       font-size: 2rem;
-      border-bottom: 2px solid #333;
-      display: inline-block;
-      padding-bottom: 5px;
+      margin-bottom: 20px;
+      color: #cccccc;
     }
 
+    /* PROJECT CARDS */
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .card {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 10px;
+      background: rgba(20,20,20,0.8);
+      border: 1px solid #222;
+      padding: 25px;
+      border-radius: 12px;
       transition: 0.3s;
+      backdrop-filter: blur(10px);
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      background: #222;
+      transform: translateY(-8px);
+      border-color: #666;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       color: #777;
+      border-top: 1px solid #222;
+    }
+
+    .contact-box {
+      background: rgba(20,20,20,0.7);
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #222;
     }
 
     a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    a:hover {
       color: white;
     }
 
@@ -99,51 +152,70 @@
 </head>
 <body>
 
-<header>
-  <h1>Sᴇ7ᴇN</h1>
-  <p>Professional Video Editor | Content Creator</p>
-  <a href="#contact" class="btn">Contact Me</a>
-</header>
+  <!-- VIDEO BACKGROUND -->
+  <video autoplay muted loop class="video-bg">
+    <source src="background.mp4" type="video/mp4">
+  </video>
 
-<section>
-  <h2>About Me</h2>
-  <p>
-    Hello, I am Se7eN, a passionate video editor who creates high quality edits, reels, gaming edits, and cinematic content. I specialize in smooth transitions, effects, and professional editing.
-  </p>
-</section>
+  <div class="overlay"></div>
 
-<section>
-  <h2>My Projects</h2>
-  <div class="projects">
+  <!-- HERO SECTION -->
+  <header>
+    <h1>Sᴇ7ᴇN</h1>
+    <p>Professional Video Editor | Gaming & Cinematic Specialist</p>
 
-    <div class="card">
-      <h3>Gaming Edit</h3>
-      <p>Add your YouTube link here</p>
+    <div class="buttons">
+      <a href="https://instagram.com/h3nrytix" target="_blank" class="btn">Instagram</a>
+      <a href="#contact" class="btn">Contact</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I am Sᴇ7ᴇN, a professional video editor specializing in gaming edits, reels, cinematic videos, and high quality content creation. My editing style focuses on smooth transitions, professional effects, and delivering premium visual experiences.
+    </p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Featured Work</h2>
+    <div class="projects">
+
+      <div class="card">
+        <h3>Gaming Edit</h3>
+        <p>Add your YouTube video link here</p>
+      </div>
+
+      <div class="card">
+        <h3>Instagram Reel</h3>
+        <p>Instagram: h3nrytix</p>
+      </div>
+
+      <div class="card">
+        <h3>Cinematic Project</h3>
+        <p>Add your best cinematic work here</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <div class="contact-box">
+      <p>Instagram: h3nrytix</p>
+      <p>Discord: 1kuza4</p>
+      <p>Email: srowdy831@email.com</p>
     </div>
 
-    <div class="card">
-      <h3>Reel Edit</h3>
-      <p>Add your Instagram link here</p>
-    </div>
+  </section>
 
-    <div class="card">
-      <h3>Cinematic Edit</h3>
-      <p>Add your best edit here</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: your@email.com</p>
-  <p>YouTube: your channel link</p>
-  <p>Instagram: your instagram link</p>
-</section>
-
-<footer>
-  <p>© 2026 Se7eN Portfolio. All rights reserved.</p>
-</footer>
+  <footer>
+    © 2026 Sᴇ7ᴇN | Professional Portfolio
+  </footer>
 
 </body>
 </html>
